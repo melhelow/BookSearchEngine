@@ -22,3 +22,4 @@ By creating BookPedia, my goal is simplify the process of picking a valuable boo
 https://github.com/melhelow/BookSearchEngine
 
 ## Deployed link
+https://bookpedia-y8ss.onrender.com/
