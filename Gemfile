@@ -7,6 +7,7 @@ gem "sinatra"
 gem "sinatra-contrib"
 gem "httparty"
 gem "json"
+gem 'bootstrap', '~> 5.3.2'
 
 # Use Puma as the app server
 gem "puma", "~> 5.0"

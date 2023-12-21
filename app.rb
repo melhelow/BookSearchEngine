@@ -4,6 +4,7 @@ require "httparty"
 require "json"
 
 
+
 get("/") do
   erb(:info_prompt)
   end
@@ -20,14 +21,22 @@ get("/") do
     
     parsed_response = JSON.parse(raw_data_string)
 
-    first_item = parsed_response["items"].at(0)
-    volume_info = first_item.fetch("volumeInfo")
-    @book_title = volume_info.fetch("title")
-    @book_author = volume_info.fetch("authors")
-    @book_description = volume_info.fetch("description")
-    @page_count = volume_info.fetch("pageCount")
-    image_photo = volume_info.fetch("imageLinks")
-    @thumbnail = image_photo.fetch("thumbnail")
+    @books = parsed_response["items"].map do |item|
+      volume_info = item.fetch("volumeInfo")
+      {
+        :title => volume_info.fetch("title"),
+        :author => volume_info["authors"] ? volume_info["authors"].at(0) : "Unknown Author",
+        :description => volume_info.fetch("description", "No description available."),
+        :page_count => volume_info.fetch("pageCount", "Page count not available."),
+        :thumbnail => volume_info.fetch("imageLinks", {}).fetch("thumbnail", "No thumbnail available."),
+        :preview => volume_info.fetch("previewLink", "#")
+      }
+    end
+    #sales = parsed_response["items"].at(2)
+    #sales_info = sales.fetch("saleInfo")
+    #list_price = sales_info.fetch("listPrice")
+    #@book_price = list_price.fetch("amount")
+   # @curruncy = list_price.fetch("currencyCode")
 
     erb(:results)
   end

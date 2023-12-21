@@ -1,11 +1,21 @@
-
-<div>
-<div><li><%= @book_title %></li></div>
-<div><li><%= @book_author %></li></div>
-<div><li><%= @book_description %></li></div>
-<div><li><%= @book_description %></li></div>
-<div><li><%= @page_count %></li></div>
-
-<img src="<%= @thumbnail %>" alt="book_photo">
-
+<div class="cards-container">
+  <% @books.each do |book| %>
+    <div class="card" style="width: 18rem;">
+      <img src="<%= book[:thumbnail] %>" class="card-img-top" alt="Book thumbnail">
+      <div class="card-body">
+        <h5 class="card-title"><%= book[:title] %></h5>
+        <p class="card-text"><%= book[:description] %>.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Author: <%= book[:author] %></li>
+      </ul>
+      <div class="card-body">
+        <a href="<%= book[:preview] %>" target="_blank" class="card-link">Preview</a>
+      </div>
+    </div>
+  <% end %>
 </div>
+<div class="button">
+<a href="/"><button type="button" class="btn btn-primary btn-lg">Return to Search page</button></a>
+</div>
+ 
