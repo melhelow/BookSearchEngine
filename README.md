@@ -2,7 +2,7 @@
 
 ## Description
 
-BookPedia is a simple Mini-project Book search engine powered by Google, it allows user to search for thir favorite books and it allow them to read a preview.
+BookPedia is a simple Mini-project Book search engine powered by Google, it allows user to search for thier favorite books and it allow them to read a preview.
 
 ## Usage
 
