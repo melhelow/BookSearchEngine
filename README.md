@@ -13,7 +13,7 @@ By creating BookPedia, my goal is simplify the process of picking a valuable boo
 
 ![Getting Started](./assets/bookpedia.png)
 ![Getting Started](./assets/results.png)
-![Getting Started](./assets/erd.jpeg)
+![Getting Started](./assets/erd.png)
 ![Getting Started](./assets/bookpedia.jpg)
 
 ## Credit
